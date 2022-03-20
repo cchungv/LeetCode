@@ -23,10 +23,14 @@ class Solution(object):
             elif i == '3':
                 prod = self.number[e][0]*'M'
             else:
+                #faster
                 prod = self.number[e][0]*self.scale[i][0] + \
                 self.number[e][1]*self.scale[i][1] + \
                 self.number[e][2]*self.scale[i][2] + \
                 self.number[e][3]*self.scale[i][3]
+                #cool
+                #prod = ''.join(list(map(lambda x, y: x*y, self.scale[i], self.number[e])))
+              
             ans = prod + ans
         
         return ans
