@@ -1,0 +1,28 @@
+# method 1 (1st answer by myself)
+class Solution(object):
+    def longestConsecutive(self, nums):
+        if nums == []:
+            return 0
+        nums = sorted(list(set(nums)))
+        diff = ['1' if abs(nums[i + 1] - nums[i]) == 1 else '0' for i in range(len(nums) - 1)]
+        diff = ''.join(diff).split('0')
+        return len(sorted(diff)[-1]) + 1
+
+# method 2 (refer to solution):
+class Solution(object):
+    def longestConsecutive(self, nums):
+        if not nums:
+            return 0
+        ns = set(nums)
+        current, stack, ans = 0, 1, 1
+        for n in ns:
+            if n - 1 in ns:
+                continue
+            stack = 1
+            current = n
+            while current + 1 in ns:
+                stack += 1
+                current += 1
+            ans = max(ans, stack)
+
+        return ans
