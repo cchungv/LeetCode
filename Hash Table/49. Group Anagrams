@@ -1,0 +1,39 @@
+# 1st
+class Solution(object):
+    def groupAnagrams(self, strs):
+        ans, lefts = [], []
+        strs.sort(key = lambda k: len(k))
+
+        for i, e in enumerate(strs):
+            left = sorted(e)
+            if left in lefts:
+                continue
+
+            length = len(e)        
+            a = [e]        
+            for s in strs[i + 1::]:
+                if length < len(s):
+                    break
+                elif length > len(s):
+                    continue                   
+                elif left == sorted(s):
+                    a.append(s)
+
+            lefts.append(left)        
+            ans.append(a)
+
+        return ans
+
+# 2nd
+class Solution(object):
+    def groupAnagrams(self, strs):
+        dct = defaultdict()
+        for k in strs:
+            key = ''.join(sorted(k))
+            
+            if key not in dct.keys():
+                dct[key] = [k]
+            else:
+                dct[key].append(k)
+        
+        return dct.values()
