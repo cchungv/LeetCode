@@ -1,0 +1,54 @@
+# 1st code, it's not efficient
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution(object):
+    def findFrequentTreeSum(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
+        print(root)
+        def sumTreeNode(s, r):
+            left = sumTreeNode(s, r.left) if isinstance(r.left, TreeNode) else r.left
+            right = sumTreeNode(s, r.right) if isinstance(r.right, TreeNode) else r.right
+            left = left if left else 0
+            right = right if right else 0
+            s.append(r.val + left + right)
+            
+            return s[-1]
+        
+        s = []
+        sumTreeNode(s, root)
+        treeSum = Counter(s)
+        m = max(treeSum.values())
+        ans = [i for i, e in treeSum.items() if e == m]
+        #print(treeSum, m, ans)
+        
+        return ans
+
+
+# 2nd code refer to other code
+class Solution(object):
+    def findFrequentTreeSum(self, root):
+        def sumTreeNode(s, r):
+            if not r:
+                return 0
+            left = sumTreeNode(s, r.left)
+            right = sumTreeNode(s, r.right)
+            p = r.val + left + right
+            s[p] = s.get(p, 0) + 1
+            
+            return p
+        
+        s = {}
+        sumTreeNode(s, root)
+        m = max(s.values())
+        ans = [i for i, e in s.items() if e == m]
+
+        
+        return ans
