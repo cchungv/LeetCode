@@ -17,3 +17,5 @@ Medium 139. Word Break, https://leetcode.com/problems/word-break/
 Medium 508. Most Frequent Subtree Sum, https://leetcode.com/problems/most-frequent-subtree-sum/
 
 Medium 781. Rabbits in Forest, https://leetcode.com/problems/rabbits-in-forest/
+
+Medium 2170. Minimum Operations to Make the Array Alternating, https://leetcode.com/problems/minimum-operations-to-make-the-array-alternating/
