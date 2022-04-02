@@ -1,0 +1,35 @@
+class Solution(object):
+    def minimumOperations(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        even = defaultdict(int)
+        odd = defaultdict(int)
+        ke1, ke2, ve1, ve2 = 0, 0, 0, 0
+        ko1, ko2, vo1, vo2 = 0, 0, 0, 0
+
+        for i in nums[0::2]:
+            even[i] += 1
+        for i in nums[1::2]:
+            odd[i] += 1
+
+        if even:
+            ke1, ve1 = max(even.items(), key = lambda d: d[1])
+            del even[ke1]
+        if even:
+            ke2, ve2 = max(even.items(), key = lambda d: d[1])
+        if odd:
+            ko1, vo1 = max(odd.items(), key = lambda d: d[1])
+            del odd[ko1]
+        if odd:
+            ko2, vo2 = max(odd.items(), key = lambda d: d[1])
+
+        m = 0
+        check_m = lambda m, ve, vo, ke, ko: ve + vo if ke != ko and m < ve + vo else m
+        m = check_m(m, ve1, vo1, ke1, ko1)
+        m = check_m(m, ve1, vo2, ke1, ko2)
+        m = check_m(m, ve2, vo1, ke2, ko1)
+
+
+        return len(nums) - m
