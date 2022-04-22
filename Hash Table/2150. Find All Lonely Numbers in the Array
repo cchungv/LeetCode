@@ -1,0 +1,12 @@
+from collections import Counter
+
+class Solution(object):
+    def findLonely(self, nums):        
+        ans = []
+
+        cnt = Counter(nums)
+        for i in cnt:
+            if i + 1 in cnt or i - 1 in cnt or cnt[i] != 1:
+                continue
+            ans.append(i)
+        return ans
