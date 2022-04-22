@@ -19,3 +19,5 @@ Medium 508. Most Frequent Subtree Sum, https://leetcode.com/problems/most-freque
 Medium 781. Rabbits in Forest, https://leetcode.com/problems/rabbits-in-forest/
 
 Medium 2170. Minimum Operations to Make the Array Alternating, https://leetcode.com/problems/minimum-operations-to-make-the-array-alternating/
+
+Medium 2150. Find All Lonely Numbers in the Array, https://leetcode.com/problems/find-all-lonely-numbers-in-the-array/
