@@ -1,0 +1,14 @@
+class Solution(object):
+    def isIsomorphic(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        m = dict()
+        for x, y in zip(s, t):
+            if m.setdefault(x, y) != y:
+                return False
+        if len(set(s)) != len(set(t)):
+            return False
+        return True
