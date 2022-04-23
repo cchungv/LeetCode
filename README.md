@@ -21,3 +21,5 @@ Medium 781. Rabbits in Forest, https://leetcode.com/problems/rabbits-in-forest/
 Medium 2170. Minimum Operations to Make the Array Alternating, https://leetcode.com/problems/minimum-operations-to-make-the-array-alternating/
 
 Medium 2150. Find All Lonely Numbers in the Array, https://leetcode.com/problems/find-all-lonely-numbers-in-the-array/
+
+Medium 890. Find and Replace Pattern, https://leetcode.com/problems/find-and-replace-pattern/
