@@ -23,3 +23,5 @@ Medium 2170. Minimum Operations to Make the Array Alternating, https://leetcode.
 Medium 2150. Find All Lonely Numbers in the Array, https://leetcode.com/problems/find-all-lonely-numbers-in-the-array/
 
 Medium 890. Find and Replace Pattern, https://leetcode.com/problems/find-and-replace-pattern/
+
+Easy 205. Isomorphic Strings, https://leetcode.com/problems/isomorphic-strings/
