@@ -1,0 +1,31 @@
+class Solution(object):
+    def findAndReplacePattern(self, words, pattern):
+        """
+        :type words: List[str]
+        :type pattern: str
+        :rtype: List[str]
+        """       
+        dict_ans = dict()
+        for w in words:
+            p = self.makePattern(w)
+            if p not in dict_ans:
+                dict_ans[p] = [w]
+            else:
+                dict_ans[p] += [w]
+                
+        key = self.makePattern(pattern)
+        if key in dict_ans:
+            return dict_ans[key]
+        else:
+            return []
+    
+    def makePattern(self, string):
+        key = ""
+        cnt = 0
+        dict_p = dict()
+        for s in string:
+            if s not in dict_p:
+                dict_p[s] = str(cnt)
+                cnt += 1
+            key += dict_p[s]
+        return key
