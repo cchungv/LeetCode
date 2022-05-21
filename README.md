@@ -25,3 +25,5 @@ Medium 2150. Find All Lonely Numbers in the Array, https://leetcode.com/problems
 Medium 890. Find and Replace Pattern, https://leetcode.com/problems/find-and-replace-pattern/
 
 Easy 205. Isomorphic Strings, https://leetcode.com/problems/isomorphic-strings/
+
+Medium 1657. Determine if Two Strings Are Close, https://leetcode.com/problems/determine-if-two-strings-are-close/
