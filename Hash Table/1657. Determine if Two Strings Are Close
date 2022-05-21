@@ -1,0 +1,22 @@
+class Solution(object):
+    def closeStrings(self, word1, word2):
+        """
+        :type word1: str
+        :type word2: str
+        :rtype: bool
+        """
+        # it's slower
+        # dct1 = Counter(word1)
+        # dct2 = Counter(word2)
+        dct1 = dict()
+        dct2 = dict()
+        for c in word1:
+            dct1[c] = dct1.get(c, 0) + 1
+        for c in word2:
+            dct2[c] = dct2.get(c, 0) + 1
+        
+        
+        if set(dct1) != set(dct2) or sorted(dct1.values()) != sorted(dct2.values()):
+            return False
+        
+        return True
