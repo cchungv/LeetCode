@@ -27,3 +27,5 @@ Medium 890. Find and Replace Pattern, https://leetcode.com/problems/find-and-rep
 Easy 205. Isomorphic Strings, https://leetcode.com/problems/isomorphic-strings/
 
 Medium 1657. Determine if Two Strings Are Close, https://leetcode.com/problems/determine-if-two-strings-are-close/
+
+Medium 2260. Minimum Consecutive Cards to Pick Up, https://leetcode.com/problems/minimum-consecutive-cards-to-pick-up/
