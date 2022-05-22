@@ -1,0 +1,41 @@
+# 1st solution:
+class Solution(object):
+    def minimumCardPickup(self, cards):
+        """
+        :type cards: List[int]
+        :rtype: int
+        """
+        if len(set(cards)) == len(cards):
+            return -1
+        
+        dct = dict()
+        for i, e in enumerate(cards):
+            dct[e] = dct.get(e, []) + [i]
+            
+        ans = 10**5
+        for lst in dct.values():
+            if len(lst) == 1:
+                continue
+            for f, b in zip(lst[:-1], lst[1:]):
+                ans = min(ans, b - f)
+                
+        return ans + 1
+        
+# 2nd solution (refer to solution other people sumited)
+class Solution(object):
+    def minimumCardPickup(self, cards):
+        """
+        :type cards: List[int]
+        :rtype: int
+        """
+        if len(set(cards)) == len(cards):
+            return -1
+        
+        dct = dict()
+        ans = len(cards)
+        for i, e in enumerate(cards):
+            if e in dct:
+                ans = min(ans, i - dct[e])
+            dct[e] = i
+                
+        return ans + 1
