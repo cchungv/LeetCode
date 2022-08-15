@@ -29,3 +29,5 @@ Easy 205. Isomorphic Strings, https://leetcode.com/problems/isomorphic-strings/
 Medium 1657. Determine if Two Strings Are Close, https://leetcode.com/problems/determine-if-two-strings-are-close/
 
 Medium 2260. Minimum Consecutive Cards to Pick Up, https://leetcode.com/problems/minimum-consecutive-cards-to-pick-up/
+
+Medium 447. Number of Boomerangs, https://leetcode.com/problems/number-of-boomerangs/
