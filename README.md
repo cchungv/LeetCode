@@ -32,4 +32,6 @@ Medium 2260. Minimum Consecutive Cards to Pick Up, https://leetcode.com/problems
 
 Medium 447. Number of Boomerangs, https://leetcode.com/problems/number-of-boomerangs/
 
+# Two pointers:
+
 Easy 88. Merge Sorted Array, https://leetcode.com/problems/merge-sorted-array/description/
