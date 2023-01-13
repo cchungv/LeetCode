@@ -36,4 +36,6 @@ Medium 447. Number of Boomerangs, https://leetcode.com/problems/number-of-boomer
 
 Easy 88. Merge Sorted Array, https://leetcode.com/problems/merge-sorted-array/description/
 
-2333. Minimum Sum of Squared Difference, https://leetcode.com/problems/the-latest-time-to-catch-a-bus/description/
+Medium 2333. Minimum Sum of Squared Difference, https://leetcode.com/problems/the-latest-time-to-catch-a-bus/description/
+
+Medium 2337. Move Pieces to Obtain a String, https://leetcode.com/problems/move-pieces-to-obtain-a-string/description/
