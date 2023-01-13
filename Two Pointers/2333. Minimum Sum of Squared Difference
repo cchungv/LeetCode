@@ -1,0 +1,53 @@
+class Solution(object):
+    def latestTimeCatchTheBus(self, buses, passengers, capacity):
+        """
+        :type buses: List[int]
+        :type passengers: List[int]
+        :type capacity: int
+        :rtype: int
+        """
+  
+        frequency = 0
+        earliest = 0
+        seat = capacity
+        gets = []
+
+        first_p = min(passengers)
+        final_bus = max(buses)
+
+        # no need to consider that the buses come before first passenger
+        buses = sorted(filter(lambda b: b >= first_p, buses))
+        l = len(buses)
+        # no need to consider that the passengers come after final bus
+        passengers = sorted(filter(lambda p: p <= final_bus, passengers))[:l*capacity:]
+        # no bus was used, so you can selet final bus to get on
+        if not buses or not passengers:
+            return final_bus
+
+        for j in passengers:
+            earliest = frequency    
+            # earliest bus
+            while j > buses[earliest]:
+                earliest += 1
+                if earliest >= l:
+                    break
+            if frequency < earliest < l: 
+                frequency = earliest
+                seat = capacity
+            # get on a bus
+            if frequency == earliest:                                     
+                gets += [j]
+                seat -= 1
+            # full bus     
+            if seat == 0:                              
+                frequency += 1
+                if frequency >= l:
+                    break   
+                seat = capacity  
+        # not full, you can come at final bus time
+        if seat > 0 and buses[-1] != gets[-1]:
+            return buses[-1]
+        # full bus, you have to come before the last passengers
+        for i in gets[::-1]:
+            if not (i - 1) in gets:
+               return i - 1
