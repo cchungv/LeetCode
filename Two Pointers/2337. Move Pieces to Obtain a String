@@ -1,0 +1,53 @@
+class Solution(object):
+    def canChange(self, start, target):
+        """
+        :type start: str
+        :type target: str
+        :rtype: bool
+        """
+        if start.replace("_", "") != target.replace("_", ""):
+            return False
+        pieces_s = ''
+        pieces_t = ''
+        sw_L = False
+        sw_R = False
+        for (s, t) in zip(start, target):
+            if s == t == "_":
+                continue
+
+            if s != t:
+                if t == "L":
+                    sw_L = True               
+                elif s == "R":
+                    sw_R = True
+                elif t == "R" and sw_R == False:
+                    return False
+                elif s == "L" and sw_L == False:
+                    return False
+            if sw_L:
+                if s != "_":
+                    pieces_s += s
+                if t != "_":
+                    pieces_t += t
+                if "R" in (pieces_s + pieces_t):
+                    return False                
+                if pieces_t == pieces_s:                
+                    pieces_s = ''
+                    pieces_t = ''
+                    sw_L = False
+            if sw_R:
+                if s != "_":
+                    pieces_s += s
+                if t != "_":
+                    pieces_t += t
+                if "L" in (pieces_s + pieces_t):
+                    return False                
+                if pieces_t == pieces_s:                
+                    pieces_s = ''
+                    pieces_t = ''
+                    sw_R = False
+
+
+        ans = False if (sw_L or sw_R) else True
+        return ans
+
